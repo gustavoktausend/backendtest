@@ -1,28 +1,28 @@
-Teste para desenvolvedor(a) backend
-data de atualização: 28/08/2020
+<h1>Teste para desenvolvedor(a) backend</h1>
+<b>Data de versão do teste: 28/08/2020</b>
 
-Introdução
+<h2>Introdução</h2>
 
-Este teste é composto pela construção de um backend REST simples, composto por dois endpoints.
+<p>Este teste é composto pela construção de um backend REST simples, composto por dois endpoints.</p>
 
-Tecnologia
+<h2>Tecnologia</h2>
 
-O teste deve ser desenvolvido em Spring Boot 2.3.3, em projeto padrão Maven. 
-Sugestão: criar utilizando https://start.spring.io/
+<p>O teste deve ser desenvolvido em <b>Spring Boot 2.3.3</b>, em projeto padrão Maven. 
+Sugestão: criar utilizando https://start.spring.io/ </p>
 
-Modelo de dados
+<h2>Modelo de dados</h2>
 
-Persistidos:
-Pais (id, nome, sigla, gentilico)
-Token (id, token, login, expiracao (timestamp), administrador (boolean) )
-Usuario (id, login, senha, nome, administrador (boolean))
+<p>Persistidos:</p>
+<p>Pais (id, nome, sigla, gentilico)</p>
+<p>Token (id, token, login, expiracao (timestamp), administrador (boolean) )</p>
+<p>Usuario (id, login, senha, nome, administrador (boolean))</p>
 
-Para resposta de requisições apenas (em memória):
-UsuarioAutenticado (login, nome, token, administrador (boolean), autenticado (boolean))
+<p>Para resposta de requisições apenas (em memória):</p>
+<p>UsuarioAutenticado (login, nome, token, administrador (boolean), autenticado (boolean))</p>
 
-Endpoints
+<h2>Endpoints</h2>
 
-/usuario - ações relativa a objetos Usuario
+<p><b>/usuario</b> - ações relativa a objetos Usuario</p>
 Ação
 Descrição
 Método
