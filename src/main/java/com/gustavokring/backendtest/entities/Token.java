@@ -3,21 +3,20 @@ package com.gustavokring.backendtest.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.sql.Timestamp;
+import java.time.Instant;
 
 @Data
+@With
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonDeserialize(builder = Token.Builder.class)
+@JsonDeserialize(builder = Token.TokenBuilder.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class Token {
@@ -30,7 +29,12 @@ public class Token {
     private Timestamp expiracao;
     private boolean administrador;
 
+    public boolean isExpired() {
+        return Timestamp.from(Instant.now())
+                .after(Timestamp.from(expiracao.toInstant().plusSeconds(300)));
+    }
+
 
     @JsonPOJOBuilder(withPrefix = "")
-    public static class Builder {}
+    public static class TokenBuilder {}
 }

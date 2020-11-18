@@ -24,8 +24,8 @@ public class BackendtestApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		usuarioService.insertNewUsuario("convidado", "manager", "Usuário convidado", false);
 		usuarioService.insertNewUsuario("admin","suporte", "Gestor", true);
-		paisService.insertNewPais("Brasil", "BR", "Brasileiro");
-		paisService.insertNewPais("Argentina","AR", "Argentino");
-		paisService.insertNewPais("Alemanha", "AL", "Alemão");
+		paisService.insertPais("Brasil", "BR", "Brasileiro");
+		paisService.insertPais("Argentina","AR", "Argentino");
+		paisService.insertPais("Alemanha", "AL", "Alemão");
 	}
 }

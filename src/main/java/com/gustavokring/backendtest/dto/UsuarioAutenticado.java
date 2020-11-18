@@ -1,4 +1,4 @@
-package com.gustavokring.backendtest.entities;
+package com.gustavokring.backendtest.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -8,31 +8,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonDeserialize(builder = Usuario.UsuarioBuilder.class)
+@JsonDeserialize(builder = UsuarioAutenticado.Builder.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
-public class Usuario {
+public class UsuarioAutenticado {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     private String login;
-
-    private String senha;
     private String nome;
+    private String token;
     private boolean administrador;
+    private boolean autenticado;
 
     @JsonPOJOBuilder(withPrefix = "")
-    public static class UsuarioBuilder {}
-
-
-
+    public static class Builder {}
 }
